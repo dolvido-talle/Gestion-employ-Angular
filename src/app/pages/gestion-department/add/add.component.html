@@ -1,0 +1,7 @@
+<form [formGroup]="departForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="department">Nom de departement</label>
+        <input formControlName="departmentName" type="text" id="departement" class="form-control" placeholder="Saisi le nom de departement">
+    </div>
+    <button class="btn btn-outline-primary mt-3 btn-sm">Ajouter</button>
+</form>

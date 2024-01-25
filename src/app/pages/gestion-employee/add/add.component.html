@@ -1,0 +1,46 @@
+
+<form [formGroup]="formEmployee" (ngSubmit)="submit()">
+    <div class="form-group">
+    <label for="Nom">Nom Employee</label>
+    <input [ngClass]="{'is-invalid' : submitted && f['employeeFirstName'].errors }" formControlName="employeeFirstName" class="form-control" type="text">
+    <div *ngIf="f['employeeFirstName'].errors" class="invalid-feedback">
+        <div *ngIf="f['employeeFirstName'].errors['required']">
+            <i>Le nom est obligatoire !</i>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="Prenom">Prénom</label>
+    <input [ngClass]="{'is-invalid' : submitted && f['employeeLastName'].errors }" formControlName="employeeLastName" class="form-control" type="text">
+    <div *ngIf="f['employeeLastName'].errors" class="invalid-feedback">
+        <div *ngIf="f['employeeLastName'].errors['required']">
+            <i>Le prenom est obligatoire !</i>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="phone">Numéro de telephone</label>
+    <input [ngClass]="{'is-invalid' : submitted && f['employeePhone'].errors }" formControlName="employeePhone" class="form-control" type="text">
+    <div *ngIf="f['employeePhone'].errors" class="invalid-feedback">
+        <div *ngIf="f['employeePhone'].errors['required']">
+            <i>Le numéro de télephone est obligatoire !</i>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+    <label for="Department">Department</label>
+    <select [ngClass]="{'is-invalid' : submitted && f['departmentId'].errors }" formControlName="departmentId" class="form-control" name="department" id="department">
+        <option *ngFor="let d of listDepartments" value="{{d.id}}">{{d.departmentName}}> </option>
+    </select>
+    <div *ngIf="f['departmentId'].errors" class="invalid-feedback">
+        <div *ngIf="f['departmentId'].errors['required']">
+            <i>Le departement est obligatoire !</i>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <Button type="submit" class="btn btn-outline-success mt-2 btn-sm">Envoyer</Button>
+    </div>
+
+
+</form>

@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Téléphone</th>
+        <th>Department</th>
+        <th>Action</th>
+    </tr>
+  </thead>
+    <tbody>
+        <tr *ngFor="let e of listEmployees">
+            <td>{{e.id}}</td>
+            <td>{{e.employeeFirstName}}</td>
+            <td>{{e.employeeLastName}}</td>
+            <td>{{e.employeePhone}}</td>
+            <td>{{e.departement.departmentName}}</td>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <button class="btn-sm btn btn-sm fa fa-edit btn-outline-info">Modifier </button>
+                </div>
+                <div class="col">
+                  <button class="btn-sm btn btn-sm fa fa-remove btn-outline-danger">Supprimer </button>
+                </div>
+
+              </div>
+            </td>
+          
+        </tr>
+    </tbody>
+</table>
